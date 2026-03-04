@@ -489,7 +489,7 @@
             window.location.href = 'index.html';
         }
 
-        emailjs.init("eBZ88Pz8NQaVlgfef");
+        emailjs.init("h7wuVLgu-SA5q8cTs");
 
         let cart = [];
         let promoApplied = false;
@@ -660,8 +660,8 @@
             };
             showNotif('Envoi de la commande...');
             Promise.all([
-                emailjs.send('service_mgxcxca', 'template_b8d447q', emailParams),
-                emailjs.send('service_mgxcxca', 'template_iyl3wrh', emailParams)
+                emailjs.send('service_ull2qzt', 'template_jvn3s3d', emailParams),
+emailjs.send('service_ull2qzt', 'template_jvn3s3d', emailParams)
             ])
             .then(() => {
                 showNotif(`✓ Commande confirmée ! Redirection ${paymentMethod}...`);
