@@ -27,63 +27,15 @@
     <meta property="twitter:title" content="U4SHOP - Streetwear Fait Main Paris">
     <meta property="twitter:description" content="Streetwear artisanal style Burberry. Pièces uniques faites main à Paris.">
     <meta property="twitter:image" content="">
-    <meta name="robots" content="max-image-preview:none">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' font-family='Oswald,sans-serif' font-weight='700'>U4</text></svg>">
     <link rel="canonical" href="https://u4shop.github.io/">
-
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PLQ6SGSN');</script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ClothingStore",
-      "name": "U4SHOP",
-      "description": "Marque de streetwear fait main à Paris. Pièces uniques style Burberry.",
-      "url": "https://u4shop.github.io/",
-      "logo": "https://i.imgur.com/7dMSJ03.jpeg",
-      "image": "https://i.imgur.com/7dMSJ03.jpeg",
-      "email": "julespineau@yahoo.com",
-      "address": { "@type": "PostalAddress", "addressLocality": "Paris", "addressCountry": "FR" },
-      "priceRange": "60€ - 90€",
-      "paymentAccepted": "PayPal, Stripe",
-      "currenciesAccepted": "EUR",
-      "openingHours": "Mo-Su",
-      "sameAs": ["https://instagram.com/u4jul", "https://tiktok.com/@u4jul"]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Hoodie Burberry Fait Main",
-      "image": "https://i.imgur.com/7dMSJ03.jpeg",
-      "description": "Hoodie fait main avec motif Burberry exclusif. Pièce unique créée avec passion.",
-      "brand": { "@type": "Brand", "name": "U4SHOP" },
-      "offers": { "@type": "Offer", "url": "https://u4shop.github.io/", "priceCurrency": "EUR", "price": "75", "availability": "https://schema.org/InStock" }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Pantalon Flare Burberry Fait Main",
-      "image": "https://i.imgur.com/eT4JXk9.jpeg",
-      "description": "Pantalon flare fait main avec motif Burberry. Style streetwear unique.",
-      "brand": { "@type": "Brand", "name": "U4SHOP" },
-      "offers": { "@type": "Offer", "url": "https://u4shop.github.io/", "priceCurrency": "EUR", "price": "90", "availability": "https://schema.org/InStock" }
-    }
-    </script>
-
-    <!-- ✅ EmailJS uniquement - jQuery et ancien widget Mondial Relay supprimés -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ClothingStore","name":"U4SHOP","description":"Marque de streetwear fait main à Paris.","url":"https://u4shop.github.io/","email":"julespineau@yahoo.com","address":{"@type":"PostalAddress","addressLocality":"Paris","addressCountry":"FR"},"priceRange":"60€ - 90€"}</script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fff; color: #000; line-height: 1.4; overflow-x: hidden; -webkit-tap-highlight-color: rgba(0,0,0,0.1); -webkit-touch-callout: none; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fff; color: #000; line-height: 1.4; overflow-x: hidden; }
         #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 99999; display: flex; align-items: center; justify-content: center; }
         #loader.hidden { opacity: 0; pointer-events: none; transition: opacity 0.5s; }
         .loader-logo { font-family: 'Oswald', sans-serif; font-size: 120px; font-weight: 700; color: #fff; letter-spacing: -3px; animation: pulse 1.5s ease-in-out infinite; }
@@ -138,13 +90,13 @@
         .close-cart:hover { transform: rotate(90deg); }
         .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid #000; }
         .cart-item-info h3 { font-family: 'Oswald', sans-serif; font-size: 24px; margin-bottom: 8px; font-weight: 700; }
-        .cart-item-info p { color: #666; font-size: 14px; font-weight: 400; }
+        .cart-item-info p { color: #666; font-size: 14px; }
         .remove-item { background: #000; color: #fff; border: 2px solid #000; padding: 10px 25px; cursor: pointer; font-size: 12px; transition: all 0.3s; text-transform: uppercase; font-weight: 900; letter-spacing: 2px; }
         .remove-item:hover { background: #fff; color: #000; }
         .empty-cart { text-align: center; padding: 40px 0; color: #999; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; }
         .promo-section, .shipping-section { margin: 30px 0; padding: 25px; background: #f5f5f5; border: 2px solid #000; }
         .promo-section h3, .shipping-section h3 { font-family: 'Oswald', sans-serif; font-size: 24px; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
-        .promo-input-group { display: flex; gap: 0; }
+        .promo-input-group { display: flex; }
         .promo-input { flex: 1; padding: 15px; background: #fff; color: #000; border: 2px solid #000; font-size: 14px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
         .promo-button { padding: 15px 30px; background: #000; color: #fff; border: 2px solid #000; font-weight: 900; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; }
         .promo-button:hover { background: #fff; color: #000; }
@@ -152,39 +104,13 @@
         .promo-message { margin-top: 15px; padding: 10px; font-weight: 700; text-align: center; letter-spacing: 1px; text-transform: uppercase; font-size: 14px; }
         .promo-message.success { background: #000; color: #fff; }
         .promo-message.error { background: #fff; color: #000; border: 2px solid #000; }
-        .shipping-options { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
-        .shipping-option { display: flex; align-items: center; padding: 15px; background: #fff; border: 2px solid #000; cursor: pointer; transition: all 0.3s; }
-        .shipping-option:hover { background: #000; color: #fff; }
-        .shipping-option input[type="radio"] { margin-right: 15px; width: 20px; height: 20px; cursor: pointer; }
-        .shipping-option-info { flex: 1; }
-        .shipping-option-name { font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-        .shipping-option-desc { font-size: 13px; color: #666; }
-        .shipping-option:hover .shipping-option-desc { color: #ccc; }
-        .shipping-option-price { font-family: 'Oswald', sans-serif; font-size: 32px; font-weight: 700; }
-        .relay-selector { margin-top: 20px; padding: 25px; background: #fff; border: 2px solid #000; display: none; }
-        .relay-selector.active { display: block; }
-        .relay-selector h4 { font-family: 'Oswald', sans-serif; font-size: 20px; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
-        .relay-selector p { font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.6; }
-        .relay-input-group { margin-bottom: 15px; }
-        .relay-input-group label { display: block; margin-bottom: 8px; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; }
-        .relay-input-group input { width: 100%; padding: 15px; background: #fff; color: #000; border: 2px solid #000; font-size: 16px; font-weight: 700; letter-spacing: 1px; }
-        .relay-button { width: 100%; padding: 18px; background: #000; color: #fff; border: 2px solid #000; font-weight: 900; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 15px; }
-        .relay-button:hover { background: #fff; color: #000; }
-        .selected-relay-info { background: #f5f5f5; border: 2px solid #000; padding: 20px; margin-top: 15px; display: none; }
-        .selected-relay-info.active { display: block; }
-        .selected-relay-info h5 { font-family: 'Oswald', sans-serif; font-size: 18px; margin-bottom: 10px; color: #000; }
-        .selected-relay-info p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 5px; }
-        .selected-relay-info p strong { color: #000; }
-        #Zone_Widget { margin: 15px 0; }
+        .shipping-info { padding: 20px; background: #fff; border: 2px solid #000; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
         .customer-info { margin: 30px 0; padding: 25px; background: #f5f5f5; border: 2px solid #000; }
         .customer-info h3 { font-family: 'Oswald', sans-serif; font-size: 24px; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; }
         .info-group { margin-bottom: 20px; }
         .info-group label { display: block; margin-bottom: 8px; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; }
         .info-group input, .info-group textarea { width: 100%; padding: 15px; background: #fff; color: #000; border: 2px solid #000; font-size: 14px; font-weight: 600; }
-        .info-group input:focus, .info-group textarea:focus { outline: none; border-color: #000; }
         .cart-total { margin-top: 40px; padding: 30px; background: #f5f5f5; border: 2px solid #000; font-family: 'Oswald', sans-serif; }
-        .checkout-btn { width: 100%; padding: 25px; background: #000; color: #fff; border: 2px solid #000; font-weight: 900; cursor: pointer; font-size: 16px; text-transform: uppercase; letter-spacing: 3px; margin-top: 30px; transition: all 0.3s; }
-        .checkout-btn:hover { background: #fff; color: #000; }
         .payment-methods { margin-top: 30px; }
         .payment-label { font-family: 'Oswald', sans-serif; font-size: 20px; margin-bottom: 15px; text-align: center; letter-spacing: 2px; text-transform: uppercase; }
         .payment-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -198,7 +124,7 @@
         .footer-section p { color: #999; line-height: 1.8; margin-bottom: 15px; font-size: 14px; }
         .footer-section a { color: #fff; text-decoration: none; display: block; margin-bottom: 12px; transition: all 0.3s; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; }
         .footer-section a:hover { padding-left: 10px; }
-        .newsletter-form { display: flex; gap: 0; margin-top: 20px; }
+        .newsletter-form { display: flex; margin-top: 20px; }
         .newsletter-input { flex: 1; padding: 15px; background: #fff; color: #000; border: 2px solid #fff; font-size: 14px; }
         .newsletter-button { padding: 15px 30px; background: #fff; color: #000; border: 2px solid #fff; font-weight: 900; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; }
         .newsletter-button:hover { background: #000; color: #fff; }
@@ -242,31 +168,20 @@
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         .slide-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .slide-left.visible { opacity: 1; transform: translateX(0); }
-        .slide-right { opacity: 0; transform: translateX(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-        .slide-right.visible { opacity: 1; transform: translateX(0); }
         .lang-toggle { position: fixed; bottom: 30px; right: 30px; background: #000; color: #fff; border: 2px solid #fff; padding: 12px 24px; cursor: pointer; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; transition: all 0.3s; z-index: 9998; }
         .lang-toggle:hover { background: #fff; color: #000; }
         [data-lang] { display: none; }
         [data-lang].active { display: inline; }
-        [data-lang-block] { display: none; }
-        [data-lang-block].active { display: block; }
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 80px; }
             .section-title { font-size: 48px; }
             .products-grid { grid-template-columns: 1fr; gap: 40px; }
-            .product-card { max-width: 100%; }
             .nav-links { display: none; }
             .cart-content { padding: 30px 20px; max-width: 95%; }
             .cart-header h2 { font-size: 36px; }
             .footer-content { grid-template-columns: 1fr; gap: 40px; }
-            .relay-selector { padding: 20px 15px; }
-            .relay-button { padding: 15px; font-size: 13px; }
-            .shipping-option { flex-direction: column; align-items: flex-start; gap: 10px; }
-            .shipping-option-price { font-size: 24px; }
-            .info-group input, .info-group textarea { font-size: 16px; }
             .notification { right: 20px; left: 20px; padding: 20px; font-size: 12px; }
             .reviews-grid { grid-template-columns: 1fr; }
-            .review-card { padding: 25px; }
             .newsletter-form { flex-direction: column; gap: 10px; }
             .newsletter-button { width: 100%; }
             .lookbook-title { font-size: 48px; }
@@ -277,26 +192,22 @@
             .promo-input-group { flex-direction: column; gap: 10px; }
             .promo-button { width: 100%; }
             .payment-buttons { grid-template-columns: 1fr; }
-            .stripe-button, .paypal-button { padding: 18px; font-size: 14px; }
         }
         @media (max-width: 480px) {
             .hero-content h1 { font-size: 60px; }
             .section-title { font-size: 36px; }
             .product-title { font-size: 28px; }
             .product-price { font-size: 36px; }
-            .countdown-number { font-size: 36px; }
-            .countdown-text { font-size: 11px; }
-            .cart-header h2 { font-size: 28px; }
             .logo { font-size: 36px; }
             .reviews-title { font-size: 36px; }
             .lookbook-title { font-size: 36px; }
+            .cart-header h2 { font-size: 28px; }
         }
     </style>
 </head>
 <body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLQ6SGSN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div id="loader"><div class="loader-logo">U4</div></div>
-
     <div class="lang-toggle" onclick="toggleLanguage()"><span id="lang-text">EN</span></div>
 
     <header>
@@ -325,7 +236,7 @@
 
             <div class="product-card slide-left" id="product-1">
                 <div class="product-image">
-                    <img src="https://i.imgur.com/7dMSJ03.jpeg" alt="Hoodie Burberry fait main U4SHOP - Streetwear artisanal Paris">
+                    <img src="https://i.imgur.com/7dMSJ03.jpeg" alt="Hoodie Burberry fait main U4SHOP">
                 </div>
                 <div class="product-info">
                     <span class="product-badge">Handmade</span>
@@ -338,13 +249,13 @@
                         <select id="size-1"><option value="S">S</option></select>
                     </div>
                     <button class="add-to-cart" onclick="addCart('Hoodie Burberry', 75, 'size-1', 'hoodie-burberry')">Add to Cart</button>
-                    <button class="notify-button" onclick="notifyMe('Hoodie Burberry')" style="display:none;" id="notify-hoodie-burberry">Notify Me</button>
+                    <button class="notify-button" style="display:none;" id="notify-hoodie-burberry" onclick="notifyMe('Hoodie Burberry')">Notify Me</button>
                 </div>
             </div>
 
             <div class="product-card slide-left" id="product-2">
                 <div class="product-image">
-                    <img src="https://i.imgur.com/eT4JXk9.jpeg" alt="Pantalon Flare Burberry fait main U4SHOP - Streetwear unique Paris">
+                    <img src="https://i.imgur.com/eT4JXk9.jpeg" alt="Pantalon Flare Burberry fait main U4SHOP">
                 </div>
                 <div class="product-info">
                     <span class="product-badge">Limited</span>
@@ -357,14 +268,13 @@
                         <select id="size-2"><option value="M">M</option></select>
                     </div>
                     <button class="add-to-cart" onclick="addCart('Pantalon Flare Burberry', 90, 'size-2', 'pantalon-flare')">Add to Cart</button>
-                    <button class="notify-button" onclick="notifyMe('Pantalon Flare Burberry')" style="display:none;" id="notify-pantalon-flare">Notify Me</button>
+                    <button class="notify-button" style="display:none;" id="notify-pantalon-flare" onclick="notifyMe('Pantalon Flare Burberry')">Notify Me</button>
                 </div>
             </div>
 
-            <!-- ✅ CORRIGÉ : prix JS 60€ (était 50€) -->
             <div class="product-card slide-left" id="product-3">
                 <div class="product-image">
-                    <img src="https://i.imgur.com/cT3KcHH.jpg" alt="Pull Coeur fait main U4SHOP - Streetwear unique Paris">
+                    <img src="https://i.imgur.com/cT3KcHH.jpg" alt="Pull Coeur fait main U4SHOP">
                 </div>
                 <div class="product-info">
                     <span class="product-badge">Handmade</span>
@@ -377,14 +287,13 @@
                         <select id="size-3"><option value="S">S</option></select>
                     </div>
                     <button class="add-to-cart" onclick="addCart('Pull Coeur', 60, 'size-3', 'pull-coeur')">Add to Cart</button>
-                    <button class="notify-button" onclick="notifyMe('Pull Coeur')" style="display:none;" id="notify-pull-coeur">Notify Me</button>
+                    <button class="notify-button" style="display:none;" id="notify-pull-coeur" onclick="notifyMe('Pull Coeur')">Notify Me</button>
                 </div>
             </div>
 
-            <!-- ✅ CORRIGÉ : prix JS 60€ (était 45€) -->
             <div class="product-card slide-left" id="product-4">
                 <div class="product-image">
-                    <img src="https://i.imgur.com/Vh5ekqt.jpg" alt="Pull U4 fait main U4SHOP - Streetwear unique Paris">
+                    <img src="https://i.imgur.com/Vh5ekqt.jpg" alt="Pull U4 fait main U4SHOP">
                 </div>
                 <div class="product-info">
                     <span class="product-badge">Limited</span>
@@ -397,7 +306,7 @@
                         <select id="size-4"><option value="S">S</option></select>
                     </div>
                     <button class="add-to-cart" onclick="addCart('Pull U4', 60, 'size-4', 'pull-u4')">Add to Cart</button>
-                    <button class="notify-button" onclick="notifyMe('Pull U4')" style="display:none;" id="notify-pull-u4">Notify Me</button>
+                    <button class="notify-button" style="display:none;" id="notify-pull-u4" onclick="notifyMe('Pull U4')">Notify Me</button>
                 </div>
             </div>
 
@@ -406,11 +315,11 @@
 
     <section class="lookbook-section fade-in">
         <h2 class="lookbook-title">LOOKBOOK</h2>
-        <p class="lookbook-subtitle">Style • Streetwear • <span data-lang="fr" class="active">Made in Paris</span><span data-lang="en">Made in Paris</span></p>
+        <p class="lookbook-subtitle">Style • Streetwear • Made in Paris</p>
         <div class="lookbook-carousel">
             <div class="lookbook-slides">
                 <div class="lookbook-slide active">
-                    <img src="https://i.imgur.com/IOt5mk6.jpeg" alt="U4SHOP Lookbook - Full Outfit Burberry">
+                    <img src="https://i.imgur.com/IOt5mk6.jpeg" alt="U4SHOP Lookbook - Full Outfit">
                     <div class="lookbook-overlay">
                         <div class="lookbook-product-name">Full Outfit</div>
                         <div class="lookbook-product-price">Hoodie + Pantalon • 165€</div>
@@ -445,20 +354,19 @@
         </div>
     </section>
 
-    <!-- ✅ CORRIGÉ : un seul id="newsletterEmail" -->
     <section class="newsletter-section fade-in" style="max-width:1400px;margin:0 auto 100px;padding:100px 40px;text-align:center;background:#f5f5f5;border:2px solid #000;">
         <h2 style="font-family:'Oswald',sans-serif;font-size:64px;font-weight:700;margin-bottom:20px;letter-spacing:-2px;">STAY UPDATED</h2>
         <p style="font-size:16px;margin-bottom:40px;text-transform:uppercase;letter-spacing:2px;">
             <span data-lang="fr" class="active">Sois prévenu des nouveaux drops et pièces uniques</span>
             <span data-lang="en">Be notified of new drops and unique pieces</span>
         </p>
-        <form class="newsletter-form" onsubmit="return subscribeNews(event)" style="display:flex;gap:0;max-width:600px;margin:0 auto;">
+        <form class="newsletter-form" onsubmit="return subscribeNews(event)" style="display:flex;max-width:600px;margin:0 auto;">
             <input type="email" class="newsletter-input" id="newsletterEmail" required placeholder="Ton email" style="flex:1;padding:20px;background:#fff;color:#000;border:2px solid #000;font-size:16px;">
             <button type="submit" class="newsletter-button" style="padding:20px 40px;background:#000;color:#fff;border:2px solid #000;font-weight:900;cursor:pointer;text-transform:uppercase;letter-spacing:2px;font-size:16px;">Subscribe</button>
         </form>
     </section>
 
-    <section class="about-section" id="about" style="max-width:1400px;margin:0 auto;padding:100px 40px;text-align:center;">
+    <section id="about" style="max-width:1400px;margin:0 auto;padding:100px 40px;text-align:center;">
         <h2 style="font-family:'Oswald',sans-serif;font-size:80px;font-weight:700;margin-bottom:30px;letter-spacing:-2px;">U4SHOP</h2>
         <p style="font-size:18px;line-height:1.8;max-width:800px;margin:0 auto;color:#666;">Chaque pièce est unique, créée avec passion et attention aux détails. Streetwear fait main à Paris. Qualité premium, style authentique, production limitée.</p>
     </section>
@@ -481,46 +389,11 @@
                 <div id="promoMessage" class="promo-message"></div>
             </div>
 
+            <!-- ✅ LIVRAISON DOMICILE UNIQUEMENT - Mondial Relay supprimé -->
             <div class="shipping-section" style="display:none;">
                 <h3>Livraison</h3>
-                <div class="shipping-options">
-                    <label class="shipping-option">
-                        <input type="radio" name="shipping" value="mondial-relais" checked onchange="updateShipping()">
-                        <div class="shipping-option-info">
-                            <div class="shipping-option-name">Point Relais</div>
-                            <div class="shipping-option-desc">Retrait en Point Mondial Relay</div>
-                        </div>
-                        <div class="shipping-option-price">4.99€</div>
-                    </label>
-                    <label class="shipping-option">
-                        <input type="radio" name="shipping" value="domicile" onchange="updateShipping()">
-                        <div class="shipping-option-info">
-                            <div class="shipping-option-name">À Domicile</div>
-                            <div class="shipping-option-desc">Livraison à votre adresse</div>
-                        </div>
-                        <div class="shipping-option-price">7.99€</div>
-                    </label>
-                </div>
-
-                <!-- ✅ CORRIGÉ : Mondial Relay iframe sans jQuery -->
-                <div class="relay-selector" id="relaySelector">
-                    <h4>📍 Sélection Point Relais</h4>
-                    <p>Entrez votre code postal pour trouver un point relais proche de chez vous.</p>
-                    <div class="relay-input-group">
-                        <label>Code Postal</label>
-                        <input type="text" id="customerPostalCode" placeholder="Ex: 75001" maxlength="5" inputmode="numeric">
-                    </div>
-                    <button class="relay-button" onclick="openRelayWidget()">📍 Choisir mon Point Relais</button>
-                    <div id="Zone_Widget"></div>
-                    <div id="selectedRelayInfo" class="selected-relay-info">
-                        <h5>✓ Point Relais Sélectionné</h5>
-                        <div id="relayDetails"></div>
-                    </div>
-                    <input type="hidden" id="relayId">
-                    <input type="hidden" id="relayName">
-                    <input type="hidden" id="relayAddress">
-                    <input type="hidden" id="relayCity">
-                    <input type="hidden" id="relayPostalCode">
+                <div class="shipping-info">
+                    🚚 Livraison à domicile — <strong>7.99€</strong>
                 </div>
             </div>
 
@@ -536,9 +409,9 @@
                 </div>
                 <div class="info-group">
                     <label>Téléphone</label>
-                    <input type="text" id="customer-phone" placeholder="06 12 34 56 78" inputmode="tel">
+                    <input type="text" id="customer-phone" placeholder="06 12 34 56 78">
                 </div>
-                <div class="info-group" id="addressGroup">
+                <div class="info-group">
                     <label>Adresse Complète</label>
                     <textarea id="customer-address" rows="3" placeholder="123 Rue Exemple, Appartement 4B, 75001 Paris"></textarea>
                 </div>
@@ -612,18 +485,16 @@
     </footer>
 
     <script>
-        // PROTECTION ACCÈS
         if (sessionStorage.getItem('u4shop_access') !== 'granted') {
             window.location.href = 'index.html';
         }
 
-        // ✅ CORRIGÉ : EmailJS init correct
         emailjs.init("eBZ88Pz8NQaVlgfef");
 
         let cart = [];
         let promoApplied = false;
         let promoDiscount = 0;
-        let selectedRelay = null;
+        const SHIPPING_COST = 7.99;
 
         const stockStatus = {
             'hoodie-burberry': true,
@@ -656,7 +527,7 @@
             const size = document.getElementById(sizeId).value;
             cart.push({ name, price, size, id: Date.now() });
             updateCart();
-            showNotif(`✓ ${name} ajouté au panier !`, 'success');
+            showNotif(`✓ ${name} ajouté au panier !`);
         }
 
         function removeCart(id) {
@@ -672,53 +543,25 @@
                 promoApplied = true;
                 promoDiscount = validPromoCodes[code];
                 msg.className = 'promo-message success';
-                msg.textContent = `✓ Code "${code}" appliqué ! -${promoDiscount}%`;
+                msg.textContent = `✓ Code appliqué ! -${promoDiscount}%`;
                 document.getElementById('promoCode').disabled = true;
                 document.querySelector('.promo-button').disabled = true;
                 updateCart();
-                showNotif(`Code promo appliqué ! -${promoDiscount}%`, 'success');
+                showNotif(`Code promo appliqué ! -${promoDiscount}%`);
             } else {
                 msg.className = 'promo-message error';
-                msg.textContent = '✗ Code promo invalide';
+                msg.textContent = '✗ Code invalide';
                 showNotif('Code promo invalide', 'error');
             }
-        }
-
-        function updateShipping() {
-            const shippingType = document.querySelector('input[name="shipping"]:checked').value;
-            const relaySelector = document.getElementById('relaySelector');
-            const addressGroup = document.getElementById('addressGroup');
-            if (shippingType === 'mondial-relais') {
-                relaySelector.classList.add('active');
-                addressGroup.style.display = 'none';
-            } else {
-                relaySelector.classList.remove('active');
-                addressGroup.style.display = 'block';
-                document.getElementById('Zone_Widget').innerHTML = '';
-            }
-            updateCartTotal();
-        }
-
-        function updateCartTotal() {
-            const total = document.getElementById('cartTotal');
-            let subtotal = cart.reduce((sum, item) => sum + item.price, 0);
-            const ship = document.querySelector('input[name="shipping"]:checked').value === 'mondial-relais' ? 4.99 : 7.99;
-            let disc = 0;
-            if (promoApplied) disc = (subtotal * promoDiscount) / 100;
-            const finalTotal = (subtotal - disc) + ship;
-            let html = `<div style="font-size:24px;margin-bottom:10px;">Sous-total: ${subtotal.toFixed(2)}€</div>`;
-            if (promoApplied) html += `<div style="font-size:20px;margin-bottom:10px;font-weight:700;">Promo -${promoDiscount}%: -${disc.toFixed(2)}€</div>`;
-            html += `<div style="font-size:20px;margin-bottom:10px;">Livraison: ${ship.toFixed(2)}€</div>
-                     <div style="font-size:48px;border-top:2px solid #000;padding-top:15px;margin-top:15px;">Total: ${finalTotal.toFixed(2)}€</div>`;
-            total.innerHTML = html;
         }
 
         function updateCart() {
             document.getElementById('cartCount').textContent = cart.length;
             const items = document.getElementById('cartItems');
+            const total = document.getElementById('cartTotal');
             if (cart.length === 0) {
                 items.innerHTML = '<div class="empty-cart">Votre panier est vide</div>';
-                document.getElementById('cartTotal').innerHTML = '';
+                total.innerHTML = '';
                 document.querySelector('.shipping-section').style.display = 'none';
                 document.querySelector('.promo-section').style.display = 'none';
                 document.querySelector('.customer-info').style.display = 'none';
@@ -729,19 +572,23 @@
             document.querySelector('.promo-section').style.display = 'block';
             document.querySelector('.customer-info').style.display = 'block';
             document.querySelector('.payment-methods').style.display = 'block';
+            let subtotal = 0;
             let html = '';
             cart.forEach(item => {
+                subtotal += item.price;
                 html += `<div class="cart-item">
-                    <div class="cart-item-info">
-                        <h3>${item.name}</h3>
-                        <p>Taille: ${item.size} • ${item.price}€</p>
-                    </div>
+                    <div class="cart-item-info"><h3>${item.name}</h3><p>Taille: ${item.size} • ${item.price}€</p></div>
                     <button class="remove-item" onclick="removeCart(${item.id})">Retirer</button>
                 </div>`;
             });
             items.innerHTML = html;
-            updateCartTotal();
-            updateShipping();
+            let disc = promoApplied ? (subtotal * promoDiscount / 100) : 0;
+            const finalTotal = (subtotal - disc) + SHIPPING_COST;
+            let totalHTML = `<div style="font-size:24px;margin-bottom:10px;">Sous-total: ${subtotal.toFixed(2)}€</div>`;
+            if (promoApplied) totalHTML += `<div style="font-size:20px;margin-bottom:10px;font-weight:700;">Promo -${promoDiscount}%: -${disc.toFixed(2)}€</div>`;
+            totalHTML += `<div style="font-size:20px;margin-bottom:10px;">Livraison: ${SHIPPING_COST.toFixed(2)}€</div>
+                          <div style="font-size:48px;border-top:2px solid #000;padding-top:15px;margin-top:15px;">Total: ${finalTotal.toFixed(2)}€</div>`;
+            total.innerHTML = totalHTML;
         }
 
         function toggleCart() {
@@ -753,54 +600,15 @@
             if (e.target === this) toggleCart();
         });
 
-        // ✅ CORRIGÉ : Mondial Relay via iframe officielle, sans jQuery
-        function openRelayWidget() {
-            const postalCode = document.getElementById('customerPostalCode').value.trim();
-            if (!postalCode || postalCode.length < 4) {
-                showNotif('Entre un code postal valide (ex: 75001)', 'error');
-                document.getElementById('customerPostalCode').focus();
-                return;
-            }
-            const zone = document.getElementById('Zone_Widget');
-            zone.innerHTML = '<iframe id="relayIframe" frameborder="0" scrolling="yes" style="width:100%;height:480px;border:2px solid #000;margin-top:10px;"></iframe>';
-            document.getElementById('relayIframe').src =
-                `https://widget.mondialrelay.com/parcelshop-picker/v4_b2c/default.aspx?Brand=BDTEST13&Country=FR&PostCode=${encodeURIComponent(postalCode)}&ColLivMod=24R&NombreResultats=7&Target=_parent&Responsive=true`;
-            showNotif('Carte chargée ! Clique sur un point relais.', 'success');
-        }
-
-        // Réception de la sélection du point relais
-        window.addEventListener('message', function(event) {
-            if (!event.data) return;
-            let data = event.data;
-            if (typeof data === 'string') {
-                try { data = JSON.parse(data); } catch(e) { return; }
-            }
-            const relay = data.MR_Selected || (data.ID && data.Nom ? data : null);
-            if (!relay) return;
-            selectedRelay = relay;
-            document.getElementById('relayId').value = relay.ID || '';
-            document.getElementById('relayName').value = relay.Nom || '';
-            document.getElementById('relayAddress').value = relay.Adresse1 || '';
-            document.getElementById('relayCity').value = relay.Ville || '';
-            document.getElementById('relayPostalCode').value = relay.CP || '';
-            document.getElementById('relayDetails').innerHTML = `
-                <p><strong>${relay.Nom}</strong></p>
-                <p>${relay.Adresse1}</p>
-                <p>${relay.CP} ${relay.Ville}</p>
-            `;
-            document.getElementById('selectedRelayInfo').classList.add('active');
-            document.getElementById('Zone_Widget').innerHTML = '';
-            showNotif('✓ Point relais sélectionné !', 'success');
-        });
-
         function validateForm() {
             const email = document.getElementById('customer-email').value.trim();
             const name = document.getElementById('customer-name').value.trim();
             const phone = document.getElementById('customer-phone').value.trim();
-            if (!email || !name || !phone) { showNotif('Remplis toutes les informations requises', 'error'); return false; }
-            const shippingType = document.querySelector('input[name="shipping"]:checked').value;
-            if (shippingType === 'mondial-relais' && !selectedRelay) { showNotif('Sélectionne un point relais Mondial Relay', 'error'); return false; }
-            if (shippingType === 'domicile' && !document.getElementById('customer-address').value.trim()) { showNotif('Entre ton adresse de livraison', 'error'); return false; }
+            const address = document.getElementById('customer-address').value.trim();
+            if (!email || !name || !phone || !address) {
+                showNotif('Remplis toutes les informations requises', 'error');
+                return false;
+            }
             return true;
         }
 
@@ -817,80 +625,71 @@
             if (cart.length === 0) { showNotif('Ton panier est vide', 'error'); return; }
             if (!validateForm()) return;
             let subtotal = cart.reduce((sum, item) => sum + item.price, 0);
-            const ship = document.querySelector('input[name="shipping"]:checked').value === 'mondial-relais' ? 4.99 : 7.99;
             if (promoApplied) subtotal -= (subtotal * promoDiscount / 100);
-            const total = (subtotal + ship).toFixed(2);
+            const total = (subtotal + SHIPPING_COST).toFixed(2);
             sendOrderEmail('PayPal', () => { window.location.href = `https://www.paypal.com/paypalme/akiraa17/${total}`; });
         }
 
-        // ✅ CORRIGÉ : sendOrderEmail — redirige même si email échoue
         function sendOrderEmail(paymentMethod, callback) {
             let subtotal = cart.reduce((sum, item) => sum + item.price, 0);
             const email = document.getElementById('customer-email').value.trim();
             const name = document.getElementById('customer-name').value.trim();
             const phone = document.getElementById('customer-phone').value.trim();
+            const address = document.getElementById('customer-address').value.trim();
             const items = cart.map(i => `${i.name} (Taille ${i.size}) - ${i.price}€`).join('\n');
-            const shippingType = document.querySelector('input[name="shipping"]:checked').value;
-            const ship = shippingType === 'mondial-relais' ? 4.99 : 7.99;
-            const shipLabel = shippingType === 'mondial-relais' ? 'Mondial Relay (4.99€)' : 'Domicile (7.99€)';
-            let shippingDetails = shippingType === 'mondial-relais' && selectedRelay
-                ? `${selectedRelay.Nom}, ${selectedRelay.Adresse1}, ${selectedRelay.CP} ${selectedRelay.Ville}`
-                : document.getElementById('customer-address').value.trim();
             let disc = 0, promoInfo = 'Aucun';
             if (promoApplied) {
                 disc = subtotal * promoDiscount / 100;
                 promoInfo = `Code u4jul (-${promoDiscount}%): -${disc.toFixed(2)}€`;
                 subtotal -= disc;
             }
-            const total = subtotal + ship;
+            const total = subtotal + SHIPPING_COST;
             const emailParams = {
                 customer_name: name,
                 customer_phone: phone,
                 customer_email: email,
                 items: items,
-                shipping_type: shipLabel,
-                shipping_details: shippingDetails,
+                shipping_type: 'Livraison à domicile (7.99€)',
+                shipping_details: address,
                 subtotal: subtotal.toFixed(2),
                 promo_info: promoInfo,
-                shipping_cost: ship.toFixed(2),
+                shipping_cost: SHIPPING_COST.toFixed(2),
                 total: total.toFixed(2),
                 order_date: new Date().toLocaleString('fr-FR'),
                 payment_method: paymentMethod
             };
-            showNotif('Envoi de la commande...', 'success');
+            showNotif('Envoi de la commande...');
             Promise.all([
                 emailjs.send('service_mgxcxca', 'template_b8d447q', emailParams),
                 emailjs.send('service_mgxcxca', 'template_iyl3wrh', emailParams)
             ])
             .then(() => {
-                showNotif(`✓ Commande confirmée ! Redirection ${paymentMethod}...`, 'success');
+                showNotif(`✓ Commande confirmée ! Redirection ${paymentMethod}...`);
                 setTimeout(callback, 1500);
             })
             .catch((err) => {
-                console.error('EmailJS error:', err);
-                showNotif(`Redirection vers ${paymentMethod}...`, 'success');
+                console.error('EmailJS:', err);
+                showNotif(`Redirection vers ${paymentMethod}...`);
                 setTimeout(callback, 1500);
             });
         }
 
         function subscribeNews(event) {
             event.preventDefault();
-            const email = document.getElementById('newsletterEmail').value;
-            if (email) showNotif('✓ Merci ! Tu es inscrit à la newsletter.', 'success');
+            showNotif('✓ Merci ! Tu es inscrit à la newsletter.');
             document.getElementById('newsletterEmail').value = '';
             return false;
         }
 
         function notifyMe(productName) {
             const email = prompt(`Entre ton email pour être prévenu du restock de ${productName}`);
-            if (email) showNotif('✓ Parfait ! On te préviendra dès le restock.', 'success');
+            if (email) showNotif('✓ Parfait ! On te préviendra dès le restock.');
         }
 
         updateCart();
     </script>
 
     <script>
-        // CAROUSEL LOOKBOOK
         let slideIndex = 1;
         function changeSlide(n) { showSlide(slideIndex += n); }
         function currentSlide(n) { showSlide(slideIndex = n); }
@@ -910,43 +709,36 @@
     </script>
 
     <script>
-        // LOADER
-        window.addEventListener('load', function() {
+        window.addEventListener('load', () => {
             setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1000);
         });
 
-        // SCROLL ANIMATIONS
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        }, { threshold: 0.1 });
+
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.fade-in, .slide-left, .slide-right').forEach(el => observer.observe(el));
+            document.querySelectorAll('.fade-in, .slide-left').forEach(el => observer.observe(el));
+            const savedLang = localStorage.getItem('u4shop_language');
+            if (savedLang && savedLang !== currentLang) {
+                currentLang = savedLang;
+                applyLang();
+            }
         });
 
-        // MULTI-LANGUE
         let currentLang = 'fr';
-        function updatePlaceholders() {
+        function applyLang() {
+            document.getElementById('lang-text').textContent = currentLang === 'fr' ? 'EN' : 'FR';
+            document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.toggle('active', currentLang === 'fr'));
+            document.querySelectorAll('[data-lang="en"]').forEach(el => el.classList.toggle('active', currentLang === 'en'));
             const emailInput = document.getElementById('newsletterEmail');
             if (emailInput) emailInput.placeholder = currentLang === 'fr' ? 'Ton email' : 'Your email';
         }
         function toggleLanguage() {
             currentLang = currentLang === 'fr' ? 'en' : 'fr';
-            document.getElementById('lang-text').textContent = currentLang === 'fr' ? 'EN' : 'FR';
-            document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.toggle('active', currentLang === 'fr'));
-            document.querySelectorAll('[data-lang="en"]').forEach(el => el.classList.toggle('active', currentLang === 'en'));
-            updatePlaceholders();
+            applyLang();
             localStorage.setItem('u4shop_language', currentLang);
         }
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('u4shop_language');
-            if (savedLang && savedLang !== currentLang) {
-                currentLang = savedLang;
-                document.getElementById('lang-text').textContent = currentLang === 'fr' ? 'EN' : 'FR';
-                document.querySelectorAll('[data-lang="fr"]').forEach(el => el.classList.toggle('active', currentLang === 'fr'));
-                document.querySelectorAll('[data-lang="en"]').forEach(el => el.classList.toggle('active', currentLang === 'en'));
-                updatePlaceholders();
-            }
-        });
     </script>
 
 </body>
