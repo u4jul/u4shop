@@ -212,6 +212,8 @@
         @media (max-width: 768px) {
             .promo-input-group { flex-direction: column; gap: 10px; }
             .promo-button { width: 100%; }
+            .payment-buttons { grid-template-columns: 1fr; }
+            .stripe-button, .paypal-button { padding: 18px; font-size: 14px; }
         }
         .promo-message { margin-top: 15px; padding: 10px; font-weight: 700; text-align: center; letter-spacing: 1px; text-transform: uppercase; font-size: 14px; }
         .promo-message.success { background: #000; color: #fff; }
@@ -253,6 +255,15 @@
         .checkout-btn { width: 100%; padding: 25px; background: #000; color: #fff; border: 2px solid #000; font-weight: 900; cursor: pointer; font-size: 16px; text-transform: uppercase; letter-spacing: 3px; margin-top: 30px; transition: all 0.3s; }
         .checkout-btn:hover { background: #fff; color: #000; }
         .checkout-btn:disabled { background: #666; cursor: not-allowed; }
+        
+        /* PAYMENT BUTTONS STRIPE */
+        .payment-methods { margin-top: 30px; }
+        .payment-label { font-family: 'Oswald', sans-serif; font-size: 20px; margin-bottom: 15px; text-align: center; letter-spacing: 2px; text-transform: uppercase; }
+        .payment-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .stripe-button { width: 100%; padding: 25px; background: #635BFF; color: #fff; border: 2px solid #635BFF; font-weight: 900; cursor: pointer; transition: all 0.3s; font-size: 16px; text-transform: uppercase; letter-spacing: 3px; }
+        .stripe-button:hover { background: #fff; color: #635BFF; }
+        .paypal-button { width: 100%; padding: 25px; background: #0070BA; color: #fff; border: 2px solid #0070BA; font-weight: 900; cursor: pointer; transition: all 0.3s; font-size: 16px; text-transform: uppercase; letter-spacing: 3px; }
+        .paypal-button:hover { background: #fff; color: #0070BA; }
         .footer { background: #000; color: #fff; padding: 100px 40px 40px; }
         .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; }
         .footer-section h3 { font-family: 'Oswald', sans-serif; font-size: 32px; margin-bottom: 25px; letter-spacing: -1px; }
@@ -671,7 +682,15 @@
             </div>
 
             <div class="cart-total" id="cartTotal"></div>
-            <button class="checkout-btn" onclick="checkout()">Commander</button>
+            
+            <!-- PAYMENT METHODS -->
+            <div class="payment-methods" style="display: none;">
+                <div class="payment-label">Choisir un mode de paiement</div>
+                <div class="payment-buttons">
+                    <button class="stripe-button" onclick="checkoutStripe()">💳 Payer par Carte</button>
+                    <button class="paypal-button" onclick="checkoutPaypal()">🅿️ PayPal</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -757,6 +776,14 @@
         };
         const validPromoCodes = { 'u4jul': 10 };
         
+        // STRIPE PAYMENT LINKS - MODE PRODUCTION
+        const stripeLinks = {
+            'Pull U4': 'https://buy.stripe.com/5kQ3cwfaX7ZY2Dv623',
+            'Pull Coeur': 'https://buy.stripe.com/00waEY4wj0xw7XPcqr',
+            'Pantalon Flare Burberry': 'https://buy.stripe.com/9B6dRa9QD6VU1zrgGH',
+            'Hoodie Burberry': 'https://buy.stripe.com/4gM28s4wj6VUdi9fCD'
+        };
+        
         // NOTIFICATION SYSTEM
         function showNotif(msg, type = 'success') {
             const existing = document.querySelector('.notification');
@@ -836,12 +863,14 @@
                 document.querySelector('.shipping-section').style.display = 'none';
                 document.querySelector('.promo-section').style.display = 'none';
                 document.querySelector('.customer-info').style.display = 'none';
+                document.querySelector('.payment-methods').style.display = 'none';
                 return;
             }
 
             document.querySelector('.shipping-section').style.display = 'block';
             document.querySelector('.promo-section').style.display = 'block';
             document.querySelector('.customer-info').style.display = 'block';
+            document.querySelector('.payment-methods').style.display = 'block';
 
             let subtotal = 0;
             let html = '';
@@ -932,12 +961,63 @@
             });
         }
 
-        function checkout() {
-            if (cart.length === 0) {
-                showNotif('Ton panier est vide', 'error');
+        // ═══════════════════════════════════════════════════════════════
+        // STRIPE CHECKOUT
+        // ═══════════════════════════════════════════════════════════════
+        function checkoutStripe() {
+            if (cart.length === 0) { 
+                showNotif('Ton panier est vide', 'error'); 
+                return; 
+            }
+            
+            const email = document.getElementById('customer-email').value.trim();
+            const name = document.getElementById('customer-name').value.trim();
+            const phone = document.getElementById('customer-phone').value.trim();
+            
+            if (!email || !name || !phone) {
+                showNotif('Remplis toutes les informations requises', 'error');
                 return;
             }
+            
+            // Vérifier la livraison
+            const shippingType = document.querySelector('input[name="shipping"]:checked').value;
+            if (shippingType === 'mondial-relais' && !selectedRelay) {
+                showNotif('Sélectionne un point relais', 'error');
+                return;
+            } else if (shippingType === 'domicile') {
+                const address = document.getElementById('customer-address').value.trim();
+                if (!address) {
+                    showNotif('Entre ton adresse de livraison', 'error');
+                    return;
+                }
+            }
+            
+            // Si un seul article dans le panier, rediriger vers Stripe
+            if (cart.length === 1) {
+                const item = cart[0];
+                const stripeLink = stripeLinks[item.name];
+                if (stripeLink) {
+                    sendOrderEmail('Stripe', () => {
+                        window.open(stripeLink, '_blank');
+                        showNotif('Redirection vers Stripe...', 'success');
+                    });
+                } else {
+                    showNotif('Erreur: Produit non trouvé', 'error');
+                }
+            } else {
+                showNotif('Pour payer par carte, veuillez commander un article à la fois', 'error');
+            }
+        }
 
+        // ═══════════════════════════════════════════════════════════════
+        // PAYPAL CHECKOUT
+        // ═══════════════════════════════════════════════════════════════
+        function checkoutPaypal() {
+            if (cart.length === 0) { 
+                showNotif('Ton panier est vide', 'error'); 
+                return; 
+            }
+            
             const email = document.getElementById('customer-email').value.trim();
             const name = document.getElementById('customer-name').value.trim();
             const phone = document.getElementById('customer-phone').value.trim();
@@ -948,27 +1028,51 @@
                 return;
             }
 
-            let shippingDetails = '';
-            
-            if (shippingType === 'mondial-relais') {
-                if (!selectedRelay) {
-                    showNotif('Sélectionne un point relais', 'error');
-                    return;
-                }
-                shippingDetails = `Point Relais: ${selectedRelay.Nom}, ${selectedRelay.Adresse1}, ${selectedRelay.CP} ${selectedRelay.Ville}`;
-            } else {
+            if (shippingType === 'mondial-relais' && !selectedRelay) {
+                showNotif('Sélectionne un point relais', 'error');
+                return;
+            } else if (shippingType === 'domicile') {
                 const address = document.getElementById('customer-address').value.trim();
                 if (!address) {
                     showNotif('Entre ton adresse de livraison', 'error');
                     return;
                 }
-                shippingDetails = `Domicile: ${address}`;
             }
-
+            
             let subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const ship = shippingType === 'mondial-relais' ? 4.99 : 7.99;
+            let disc = 0;
+            if (promoApplied) {
+                disc = (subtotal * promoDiscount) / 100;
+                subtotal = subtotal - disc;
+            }
+            const total = subtotal + ship;
+            
+            sendOrderEmail('PayPal', () => {
+                window.location.href = `https://www.paypal.com/paypalme/akiraa17/${total.toFixed(2)}`;
+            });
+        }
+
+        // ═══════════════════════════════════════════════════════════════
+        // SEND ORDER EMAIL
+        // ═══════════════════════════════════════════════════════════════
+        function sendOrderEmail(paymentMethod, callback) {
+            let subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const email = document.getElementById('customer-email').value.trim();
+            const name = document.getElementById('customer-name').value.trim();
+            const phone = document.getElementById('customer-phone').value.trim();
             const items = cart.map(item => `${item.name} (Taille ${item.size})`).join(', ');
+            const shippingType = document.querySelector('input[name="shipping"]:checked').value;
             const ship = shippingType === 'mondial-relais' ? 4.99 : 7.99;
             const shipTypeLabel = shippingType === 'mondial-relais' ? 'Mondial Relay (4.99€)' : 'Livraison à domicile (7.99€)';
+
+            let shippingDetails = '';
+            if (shippingType === 'mondial-relais') {
+                shippingDetails = `Point Relais: ${selectedRelay.Nom}, ${selectedRelay.Adresse1}, ${selectedRelay.CP} ${selectedRelay.Ville}`;
+            } else {
+                const address = document.getElementById('customer-address').value.trim();
+                shippingDetails = `Domicile: ${address}`;
+            }
 
             let disc = 0;
             let promoInfo = 'Aucun';
@@ -991,35 +1095,30 @@
                 promo_info: promoInfo,
                 shipping_cost: ship.toFixed(2),
                 total: total.toFixed(2),
-                order_date: new Date().toLocaleString('fr-FR')
+                order_date: new Date().toLocaleString('fr-FR'),
+                payment_method: paymentMethod
             };
 
             showNotif('Envoi des informations...', 'success');
 
-            // Email 1: Notification pour TOI (merchant)
-            const emailParamsMerchant = { ...emailParams };
-            
-            // Email 2: Confirmation pour le CLIENT
-            const emailParamsClient = { ...emailParams };
-
-            // Envoyer les 2 emails en parallèle
+            // Envoyer les 2 emails (merchant + client)
             Promise.all([
-                emailjs.send('service_mgxcxca', 'template_b8d447q', emailParamsMerchant),
-                emailjs.send('service_mgxcxca', 'template_iyl3wrh', emailParamsClient)
+                emailjs.send('service_mgxcxca', 'template_b8d447q', emailParams),
+                emailjs.send('service_mgxcxca', 'template_iyl3wrh', emailParams)
             ])
                 .then(function(responses) {
                     console.log('Email merchant:', responses[0].status);
                     console.log('Email client:', responses[1].status);
-                    showNotif('Commande enregistrée ! Redirection PayPal...', 'success');
+                    showNotif(`Commande enregistrée ! Redirection ${paymentMethod}...`, 'success');
                     setTimeout(() => {
-                        window.location.href = `https://www.paypal.com/paypalme/akiraa17/${total.toFixed(2)}`;
+                        callback();
                     }, 1500);
                 })
                 .catch(function(error) {
                     console.error('Erreur envoi email:', error);
-                    showNotif('Erreur d\'envoi. Redirection PayPal...', 'error');
+                    showNotif('Erreur d\'envoi. Redirection...', 'error');
                     setTimeout(() => {
-                        window.location.href = `https://www.paypal.com/paypalme/akiraa17/${total.toFixed(2)}`;
+                        callback();
                     }, 2000);
                 });
         }
