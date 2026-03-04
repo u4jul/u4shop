@@ -464,6 +464,50 @@
                     <button class="notify-button" onclick="notifyMe('Pantalon Flare Burberry')" style="display:none;" id="notify-pantalon-flare">Notify Me</button>
                 </div>
             </div>
+
+            <!-- Produit 3: Pull Coeur -->
+            <div class="product-card slide-left" id="product-3">
+                <div class="product-image">
+                    <img src="https://i.imgur.com/cT3KcHH.jpg" alt="Pull Coeur fait main U4SHOP - Streetwear unique Paris">
+                </div>
+                <div class="product-info">
+                    <span class="product-badge">Handmade</span>
+                    <span class="unique-badge">⭐ Pièce Unique</span>
+                    <h3 class="product-title">Pull Coeur</h3>
+                    <p class="product-description">Pull fait main avec motif coeur. Création unique et originale.</p>
+                    <div class="product-price">50€</div>
+                    <div class="product-size">
+                        <label>Taille:</label>
+                        <select id="size-3">
+                            <option value="S">S</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart" onclick="addCart('Pull Coeur', 50, 'size-3', 'pull-coeur')">Add to Cart</button>
+                    <button class="notify-button" onclick="notifyMe('Pull Coeur')" style="display:none;" id="notify-pull-coeur">Notify Me</button>
+                </div>
+            </div>
+
+            <!-- Produit 4: Pull U4 -->
+            <div class="product-card slide-left" id="product-4">
+                <div class="product-image">
+                    <img src="https://i.imgur.com/Vh5ekqt.jpg" alt="Pull U4 fait main U4SHOP - Streetwear unique Paris">
+                </div>
+                <div class="product-info">
+                    <span class="product-badge">Limited</span>
+                    <span class="unique-badge">⭐ Pièce Unique</span>
+                    <h3 class="product-title">Pull U4</h3>
+                    <p class="product-description">Pull U4 fait main avec logo brodé. Style minimaliste et authentique.</p>
+                    <div class="product-price">45€</div>
+                    <div class="product-size">
+                        <label>Taille:</label>
+                        <select id="size-4">
+                            <option value="S">S</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart" onclick="addCart('Pull U4', 45, 'size-4', 'pull-u4')">Add to Cart</button>
+                    <button class="notify-button" onclick="notifyMe('Pull U4')" style="display:none;" id="notify-pull-u4">Notify Me</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -492,6 +536,15 @@
                         <div class="lookbook-product-price">Bientôt disponible</div>
                     </div>
                 </div>
+                
+                <!-- Slide 3 - Nouvelle Photo -->
+                <div class="lookbook-slide">
+                    <img src="https://i.imgur.com/UY3iSrV.jpg" alt="U4SHOP Lookbook - Collection">
+                    <div class="lookbook-overlay">
+                        <div class="lookbook-product-name">Style U4SHOP</div>
+                        <div class="lookbook-product-price">Collection Exclusive</div>
+                    </div>
+                </div>
             </div>
             
             <!-- Navigation Flèches -->
@@ -502,6 +555,7 @@
             <div class="lookbook-dots">
                 <span class="lookbook-dot active" onclick="currentSlide(1)"></span>
                 <span class="lookbook-dot" onclick="currentSlide(2)"></span>
+                <span class="lookbook-dot" onclick="currentSlide(3)"></span>
             </div>
         </div>
         
@@ -695,7 +749,12 @@
         let promoApplied = false;
         let promoDiscount = 0;
         let selectedRelay = null;
-        const stockStatus = { 'hoodie-burberry': true, 'pantalon-flare': true };
+        const stockStatus = { 
+            'hoodie-burberry': true, 
+            'pantalon-flare': true,
+            'pull-coeur': true,
+            'pull-u4': true
+        };
         const validPromoCodes = { 'u4jul': 10 };
         
         // NOTIFICATION SYSTEM
